@@ -36,29 +36,29 @@ const MessageInput = ({ match }) => {
 			<button
 				type='button'
 				onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-				className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pink-500 focus:outline-none'
+				className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-indigo-500 transition-colors duration-300 ease-in-out focus:outline-none'
 			>
-				<Smile size={24} />
+				<Smile size={24} className="transform transition-transform duration-300 hover:scale-110" />
 			</button>
 
 			<input
 				type='text'
 				value={message}
 				onChange={(e) => setMessage(e.target.value)}
-				className='flex-grow p-3 pl-12 rounded-l-lg border-2 border-pink-500 
-        focus:outline-none focus:ring-2 focus:ring-pink-300'
+				className='flex-grow p-3 pl-12 rounded-l-lg border-2 border-indigo-500 
+        focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg'
 				placeholder='Type a message...'
 			/>
 
 			<button
 				type='submit'
-				className='bg-pink-500 text-white p-3 rounded-r-lg 
-        hover:bg-pink-600 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-300'
+				className='bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-3 rounded-r-lg 
+        hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-md transform hover:translate-x-1'
 			>
-				<Send size={24} />
+				<Send size={24} className="transform transition-transform duration-300 hover:rotate-12" />
 			</button>
 			{showEmojiPicker && (
-				<div ref={emojiPickerRef} className='absolute bottom-20 left-4'>
+				<div ref={emojiPickerRef} className='absolute bottom-20 left-4 animate-fadeIn'>
 					<EmojiPicker
 						onEmojiClick={(emojiObject) => {
 							setMessage((prevMessage) => prevMessage + emojiObject.emoji);
